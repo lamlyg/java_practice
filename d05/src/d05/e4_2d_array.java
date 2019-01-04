@@ -10,11 +10,19 @@ public class e4_2d_array {
 		int [][]arr = new int[2][3];
 		
 		int [][]arr2 = {{90,50,66,78},{90,50,78,45},{90,40,68,20}};
+		int [][]arr3 = {{90,50,66},{90,50},{90,40,68,20}};
 		
-		for(int i=0;i<arr2.length;i++) {//행의 길이 -> arr2.length
-			for(int j=0;j<arr2[i].length;j++) {//열의 길이->arr2[i].length
-				System.out.print(arr2[i][j]+" ");
+		int sum=0;
+		int count =0;
+		
+		for(int i=0;i<arr3.length;i++) {//행의 길이 -> arr2.length
+			sum=0; count=0;
+			for(int j=0;j<arr3[i].length;j++) {//열의 길이->arr2[i].length
+				sum+=arr3[i][j];
+				count++;
+				System.out.print(arr3[i][j]+" ");
 			}
+			System.out.print("-> Sum : "+sum+" Average : "+sum/count);
 			System.out.println();
 		}
 	}

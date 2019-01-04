@@ -11,31 +11,39 @@ public class e2_quickSort {
 		pivot=arr[p];
 		int i=0, j=arr.length-2;
 		
-		Qsort(arr, i, j, pivot, p);
+//		Qsort(arr, i, j, pivot, p);
 		
-//		while(isRun) {
-//			if(arr[i]>=pivot&&arr[j]<=pivot) {
-//				temp=arr[i];
-//				arr[i]=arr[j];
-//				arr[j]=temp;
-//				i++;
-//				j--;
-//			}
-//			else if(i>=j) {
-//				temp=arr[i];
-//				arr[i]=pivot;
-//				arr[p]=temp;
-//				p=i;
-//				for(int k=0;k<arr.length;k++) {
-//					System.out.print(arr[k]+" ");
-//				}
-//				System.out.println();
-//				break;
-//			}
-//			else {
-//				i++;
-//			}
+//		if(left<right) {
+//			int i = left, j=right + 1, pivot = a[left];
 //		}
+//		do {
+//			do i++; while(a[i]<pivot);
+//			do j--; while(a[j]>pivot);
+//			if(i<j)swap(a[i],a[j];)
+//		}
+		while(isRun) {
+			if(arr[i]>=pivot&&arr[j]<=pivot) {
+				temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+				i++;
+				j--;
+			}
+			else if(i>=j) {
+				temp=arr[i];
+				arr[i]=pivot;
+				arr[p]=temp;
+				p=i;
+				for(int k=0;k<arr.length;k++) {
+					System.out.print(arr[k]+" ");
+				}
+				System.out.println();
+				break;
+			}
+			else {
+				i++;
+			}
+		}
 		
 		
 		for(int k=0;k<arr.length;k++) {
