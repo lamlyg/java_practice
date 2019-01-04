@@ -12,7 +12,7 @@ public class e4_2d_array {
 		int [][]arr2 = {{90,50,66,78},{90,50,78,45},{90,40,68,20}};
 		int [][]arr3 = {{90,50,66},{90,50},{90,40,68,20}};
 		
-		int sum=0;
+		int sum;
 		int count =0;
 		
 		for(int i=0;i<arr3.length;i++) {//행의 길이 -> arr2.length

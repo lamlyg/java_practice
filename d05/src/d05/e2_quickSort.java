@@ -11,16 +11,11 @@ public class e2_quickSort {
 		pivot=arr[p];
 		int i=0, j=arr.length-2;
 		
+		//Quick(arr,i,j);
 //		Qsort(arr, i, j, pivot, p);
 		
-//		if(left<right) {
-//			int i = left, j=right + 1, pivot = a[left];
-//		}
-//		do {
-//			do i++; while(a[i]<pivot);
-//			do j--; while(a[j]>pivot);
-//			if(i<j)swap(a[i],a[j];)
-//		}
+
+		
 		while(isRun) {
 			if(arr[i]>=pivot&&arr[j]<=pivot) {
 				temp=arr[i];
@@ -52,35 +47,63 @@ public class e2_quickSort {
 		System.out.println();
 	}
 	
-	static void Qsort(int []arr, int left, int right, int pivot, int p) {
-		
-		int temp=0;
-		arr = new int[arr.length];
-		
-		while(true) {
-			if(arr[left]>=pivot&&arr[right]<=pivot) {
-				temp=arr[left];
-				arr[left]=arr[right];
-				arr[right]=temp;
-				left++;
-				right--;
-			}
-			else if(left>=right) {
-				temp=arr[left];
-				arr[left]=pivot;
-				arr[p]=temp;
-				p=left;
-				for(int k=0;k<arr.length;k++) {
-					System.out.print(arr[k]+" ");
-				}
-				System.out.println();
-				break;
-			}
-			else {
-				left++;
-			}
-		}
-		
-		//return left, right, pivot, p;
-	}
+//	static void Qsort(int []arr, int left, int right, int pivot, int p) {
+//		
+//		int temp=0;
+//		arr = new int[arr.length];
+//		
+//		while(true) {
+//			if(arr[left]>=pivot&&arr[right]<=pivot) {
+//				temp=arr[left];
+//				arr[left]=arr[right];
+//				arr[right]=temp;
+//				left++;
+//				right--;
+//			}
+//			else if(left>=right) {
+//				temp=arr[left];
+//				arr[left]=pivot;
+//				arr[p]=temp;
+//				p=left;
+//				for(int k=0;k<arr.length;k++) {
+//					System.out.print(arr[k]+" ");
+//				}
+//				System.out.println();
+//				break;
+//			}
+//			else {
+//				left++;
+//			}
+//		}
+//		
+//		//return left, right, pivot, p;
+//	}
+
+//	private static int Quick(int []a,int left, int right){
+//			
+//			if(left<right) {
+//			int i = left;
+//			int j=right + 1;
+//			int pivot = a[left];
+//			int temp=0;
+//			}
+//			
+//			do {
+//				do i++{while(a[i]<pivot);
+//				do j--; while(a[j]>pivot);
+//				if(i<j) {
+//					temp=a[i];
+//					a[j]=a[i];
+//					a[i]=temp;
+//				}
+//			}
+//			temp=a[left];
+//			a[left]=a[j];
+//			a[j]=temp;
+//			//swap(a[left],a[j]);
+//			
+//			QuickSort(a,left,j-1);
+//			QuickSort(a,j+1,right);
+//		}
+//	}
 }
