@@ -1,5 +1,9 @@
 package d05;
-
+/*
+ 2019.01.04.FRI
+ 팀과제 - 문제1
+ 구현자 : 이윤지
+ */
 import java.util.Scanner;
 
 /*
@@ -13,32 +17,37 @@ import java.util.Scanner;
 public class team_p1 {
 	public static void main(String[] args) {
 
-		int i=0,j=0;
+		int i=0;
 		int count=0;
-		String result = "";
-		Scanner input = new Scanner(System.in);
+	
+		Scanner input = new Scanner(System.in);//입력을 위한 Scanner 선언
 
 		System.out.print("Input str : ");
-		String str = input.nextLine();
+		String str = input.nextLine();//문자열 입력받기
+
+		char [] c_arr = str.toCharArray();
+		//char형 배열 c_arr에 입력받은 String형 변수 result에 String함수의 toCharArray함수를 이용하여 문자열에서 문자로 변환
+
+		count=1;//연속된 문자를 세기위한 변수 count
+
+		for(i=1;i<c_arr.length;i++) {//연속된 문자 비교
+			if(c_arr[i-1]==c_arr[i]) {
+				count++;
+			}	
+			else {
+				System.out.print(c_arr[i-1]+""+count);
+				count=1;
+			}
+		}
 		
-		for(i=0;i<str.length();i++) {
-			if(!result.contains(String.valueOf(str.charAt(i)))){
-				result+=String.valueOf(str.charAt(i));
-			}
+		if(c_arr[c_arr.length-2]!=c_arr[c_arr.length-1]) {//마지막문자의 연속여부를 확인하기 위한 조건문
+			count=1;
+			System.out.print(c_arr[c_arr.length-1]+""+count);
+		}
+		else {			
+			System.out.print(c_arr[c_arr.length-1]+""+count);					
 		}
 
-		char [] c_arr = result.toCharArray();
-
-		for(i=0;i<c_arr.length;i++) {
-			for(j=0;j<str.length();j++) {
-				if(c_arr[i]==str.charAt(j)) {
-					count++;
-				}
-			}
-			System.out.print(c_arr[i]+""+count+" ");
-			count=0;
-		}
-
-		input.close();
-	}
+		input.close();//Scanner 종료
+	}//main종료
 }
