@@ -5,7 +5,25 @@ import java.util.*;
 public class Quick {
     static int N;
     static int arr[];
-
+    
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Input N: ");
+        N = input.nextInt();
+        arr = new int[N];
+        
+        System.out.println("Input N numbers to Quick sort: ");
+        for (int i = 0; i < N; i++) {
+            arr[i] = input.nextInt();
+        }
+        quickSort(arr, 0, N - 1);
+        for (int i = 0; i < N; i++) {
+            System.out.print(String.valueOf(arr[i]) + ' ');
+        }
+        input.close();
+    }
+    
     static void quickSort(int arr[], int left, int right) {
         int pivot, left_temp, right_temp;
         left_temp = left;
@@ -34,17 +52,5 @@ public class Quick {
         if (right > pivot) quickSort(arr, pivot + 1, right);
     }
 
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        N = scanner.nextInt();
-        arr = new int[N];
-        for (int i = 0; i < N; i++) {
-            arr[i] = scanner.nextInt();
-        }
-        quickSort(arr, 0, N - 1);
-        for (int i = 0; i < N; i++) {
-            System.out.print(String.valueOf(arr[i]) + ' ');
-        }
-    }
 }
 	
