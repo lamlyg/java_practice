@@ -50,6 +50,13 @@ public class SumEx {
 		}
 		
 //		System.out.println(sum);
-		return sum;
+		return sum;//결과값 반환->나를 호출한 곳으로 돌아가 + 결과값 sum을 가지고
 	}
+	/*
+	 	결과값 리턴
+	 	1. 돌려줄 결과값의 형태를 미리 정해둠
+	 	2. 작업이 끝나고 결과값을 돌려줌
+	 	3. 메소드를 호출하고 얻은 결과값을 특정변수에 저장
+	 */
+	
 }
