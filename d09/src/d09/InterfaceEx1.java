@@ -19,7 +19,7 @@ package d09;
  */
 
 interface Soundable{
-	void Sound();
+	void Sound();//함수 앞에 abstract 선언 안해도됨 (왜냐하면 인터페이스에는 추상메소드만 선언 가능함)
 }
 
 class Cat implements Soundable{
@@ -32,7 +32,7 @@ class Cat implements Soundable{
 	
 }
 
-class Dog implements Soundable{
+class Doggy implements Soundable{
 
 	@Override
 	public void Sound() {
@@ -44,6 +44,11 @@ class Dog implements Soundable{
 
 public class InterfaceEx1 {
 	public static void main(String[] args) {
+		Cat cat = new Cat();
+		Doggy dog = new Doggy();
 		
+		//인터페이스도 구현클래스들을 참조할 수 있음-> 3. 서로 연관이 없는 클래스들끼리 관계를 맺을 수 있음(~=다형성)
+		Soundable sound = new Cat();
+		Soundable sound2 = new Doggy();
 	}
 }
