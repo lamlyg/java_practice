@@ -55,7 +55,7 @@ abstract class Employee{
 
 	abstract void pay();
 	
-	void print(Employee e) {
+	public void print(Employee e) {
 		pay();
 		if(e instanceof Regular) {
 			System.out.println("[정규직] "+e.getName()+","+e.getAge()+","+(int)e.getYearsalary());
@@ -65,8 +65,24 @@ abstract class Employee{
 		}
 		else {
 			System.out.println("Error");
-		}
+		}	
 	}
+	
+//	public void print() {
+//		String result = null;
+//		if(this instanceof Regular) {
+//			result = "[정규직]";
+//		}
+//		else if (this instanceof Temporary) {
+//			result = "[비정규직]";
+//		}
+//		else {
+//			System.out.println("Error");
+//		}
+//		System.out.println(result+name+","+age+","+(int)yearsalary);			
+//	}
+		
+	
 	
 	public Employee() {
 		
@@ -102,7 +118,7 @@ class Regular extends Employee {
 		this.monthsalary = monthsalary;
 	}
 
-	void pay() {
+	public void pay() {
 		//double yearsalary=super.getYearsalary();
 		double yearsalary=monthsalary*12;
 		if(monthsalary>=250) {
@@ -122,7 +138,8 @@ class Regular extends Employee {
 		
 	}
 	
-	public Regular(double bonus, double monthsalary) {
+	public Regular(String name, double bonus, double monthsalary) {
+		name = super.getName();
 		this.bonus = bonus;
 		this.monthsalary = monthsalary;
 	}
@@ -152,7 +169,7 @@ class Temporary extends Employee {
 		this.daysalary = daysalary;
 	}
 
-	void pay() {
+	public void pay() {
 		double yearsalary=day*daysalary;
 		super.setYearsalary(yearsalary);
 	}
@@ -161,7 +178,9 @@ class Temporary extends Employee {
 		
 	}
 	
-	public Temporary(int day, double daysalary) {
+	public Temporary(String name, int day, double daysalary) {
+		name = super.getName();
+//		super.setName(name);
 		this.day = day;
 		this.daysalary = daysalary;
 	}
@@ -171,18 +190,22 @@ class Temporary extends Employee {
 
 public class EmployeeTest {
 	public static void main(String[] args) {
-		Temporary e1 = new Temporary(5,8);
-		Regular e2 = new Regular();
+		//Employee타입 참조변수 5칸짜리 배열 생성
+		Employee[] e = new Employee[5];
+		e[0] = new Temporary("김철수",5,8);
+		e[1] = new Regular();
 		
-		e1.setAge(18);
-		e1.setName("김철수");
+		e[0].setAge(18);
+		
 		//e1.pay();
-		e1.print(e1);
+		e[0].setName("김철수");
+		e[0].print(e[0]);
 		
-		e2.setAge(23);
-		e2.setName("김영희");
-		e2.setMonthsalary(200);
-		e2.print(e2);
+		e[1].setAge(23);
+		e[1].setName("김영희");
+		Regular r1=(Regular) e[1];
+		r1.setMonthsalary(200);
+		e[1].print(e[1]);
 		
 	}
 }
