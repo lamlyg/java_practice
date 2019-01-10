@@ -1,5 +1,28 @@
 package d08_2;
 
+/*
+ 	Employee 클래스
+ 	추상클래스
+ 	필드  : 이름, 나이, 연봉
+ 	추상메소드
+ 		pay();
+ 	메소드
+ 		print() : 직원정보출력 (예 : [정규직] 홍길동, 23, 3000)
+ 	
+ 	Regular 클래스
+ 		구현클래스
+ 		필드 : 상여금, 월급;
+ 		pay() : 월급에 따른 상여금 계산해서 연봉계산
+ 		- 250만 이상 : 연봉의 6%
+ 		- 200만 이상 : 연봉의 5%
+ 		- 200만 미만 : 연봉의 4%
+ 		
+ 	Temporary 클래스
+ 		구현클래스
+ 		필드 : 근무일수, 하루치 급여
+ 		pay() : 급여계산
+ */
+
 abstract class Employee{
 	private String name;
 	private int age;
