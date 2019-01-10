@@ -1,6 +1,6 @@
 package d08;
 
-class GrandParent {
+class GrandParent {//*상속관계헤서는 부모는 단 하나
 	
 	int data = 100;
 	
