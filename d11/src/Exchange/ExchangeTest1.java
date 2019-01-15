@@ -41,22 +41,22 @@ class ExchangeFrame extends JFrame{
 		setSize(300,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-		
-		
+
+
 	}
-	
-	 class ExchangeListener implements ActionListener{
-         
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	            // TODO Auto-generated method stub
-	        	String dollarStr = jf.getText();
-	        	double dollarDouble = Double.parseDouble(dollarStr);
-	        	int won = (int)(dollarDouble*1122.38);
-	        	label.setText(won+"won");
-	        }
-	    }
-	 
+
+	class ExchangeListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			String dollarStr = jf.getText();
+			double dollarDouble = Double.parseDouble(dollarStr);
+			int won = (int)(dollarDouble*1122.38);
+			label.setText(won+"won");
+		}
+	}
+
 }
 public class ExchangeTest1 {
 	public static void main(String[] args) {

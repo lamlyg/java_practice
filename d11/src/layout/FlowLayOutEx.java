@@ -1,5 +1,4 @@
 package layout;
-import java.awt.FlowLayout;
 /*
  	배치관리자
  		- FlowLayout 배치관리자
@@ -7,6 +6,8 @@ import java.awt.FlowLayout;
  			: 배치할 공간이 없으면 아래로 내려와서 반복
  			
  */
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -54,11 +55,11 @@ public class FlowLayOutEx extends JFrame implements ActionListener{
 //		panel.add(btn4);
 //		panel.add(btn5);
 		
-		panel.add(new JButton("Button1"));
-		panel.add(new JButton("Button2"));
-		panel.add(new JButton("Button3"));
-		panel.add(new JButton("Button4"));
-		panel.add(new JButton("Button5"));
+		panel.add(new JButton("Button1"),BorderLayout.CENTER);
+		panel.add(new JButton("Button2"),BorderLayout.NORTH);
+		panel.add(new JButton("Button3"),BorderLayout.SOUTH);
+		panel.add(new JButton("Button4"),BorderLayout.WEST);
+		panel.add(new JButton("Button5"),BorderLayout.EAST);
 		
 		add(panel);
 		setVisible(true);
